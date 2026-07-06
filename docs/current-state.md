@@ -39,8 +39,11 @@ Updated: 2026-07-06 (evening)
 - Rochester: 1st Saturday (2nd in July) · Buffalo: 3rd Saturday ·
   order deadline Thursday 11:59 PM before delivery
 - Farm pin: Leicester, NY (42.7720, -77.8967)
-- Brighton Farmers Market pin: Brighton High School, 1150 Winton Rd S
-  (43.1236, -77.5661), Sundays
+- Brighton Farmers Market pin: coords point at the CURRENT venue (Golisano
+  Institute, 150 Sawgrass Dr — 43.1138, -77.6030 as of 2026-07) but all
+  customer copy says only "Brighton Farmers Market, Sundays" because the
+  venue moves (Brian's rule, 2026-07-06). On a move: update BRIGHTON coords
+  in app.js only, never add the venue name to copy.
 - Links: /store, /order-planner, /email-sign-up-landing-page
 
 ## Known limits

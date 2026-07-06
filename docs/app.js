@@ -13,7 +13,9 @@
     : "";
 
   var FARM = { lat: 42.7720, lng: -77.8967 };        // Leicester, NY
-  var BRIGHTON = { lat: 43.1236, lng: -77.5661 };    // Brighton High School lot
+  // Market venue moves; keep customer copy venue-free (Brian 2026-07-06).
+  // Coords = current site (Golisano Institute, 150 Sawgrass Dr) — update on moves.
+  var BRIGHTON = { lat: 43.1138, lng: -77.6030 };
 
   var MARKETS = {
     rochester: { label: "Rochester", color: "#2C5170" },
@@ -136,7 +138,7 @@
     L.marker(FARM, { icon: farmIcon }).addTo(map)
       .bindPopup("<strong>Park View Farm</strong><br>Leicester, NY, at the north entrance of Letchworth State Park. Every delivery starts here.");
     L.marker(BRIGHTON, { icon: mktIcon }).addTo(map)
-      .bindPopup("<strong>Brighton Farmers Market</strong><br>Sundays, Brighton High School lot. Come say hi to Brian, Sarah, and George.");
+      .bindPopup("<strong>Brighton Farmers Market</strong><br>Sundays. Come say hi to Brian, Sarah, and George.");
 
     all.addLayer(L.marker(FARM));
     map.fitBounds(all.getBounds().pad(0.06));
