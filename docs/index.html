@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Where We Deliver | Park View Farm</title>
+<meta name="description" content="See exactly where Park View Farm delivers pasture-raised, corn-and-soy-free meat and eggs. Rochester and Buffalo home delivery zones, next delivery dates, and a ZIP checker.">
+<link rel="icon" type="image/png" href="https://s3.amazonaws.com/grazecart/parkviewfamilyfarms/images/1723474017_66ba20616d344.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Copse:400%7CHind:400,500,600,700">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="masthead">
+  <a href="https://parkviewfamilyfarm.com" class="masthead__farm">Park View Farm</a>
+  <h1>Where We Deliver</h1>
+  <p class="masthead__sub">We load the van in Leicester, at the north entrance of Letchworth
+  State Park, and bring pasture-raised, corn-and-soy-free meat and eggs to doorsteps in
+  Rochester and Buffalo once a month. Type your ZIP and see if we come to you.</p>
+</header>
+
+<main id="delivery-map">
+
+  <section class="card card--checker">
+    <form id="zip-form" autocomplete="postal-code">
+      <label for="zip-input" class="checker__label">Your ZIP code</label>
+      <div class="checker__row">
+        <input id="zip-input" inputmode="numeric" pattern="\d{5}" maxlength="5"
+               placeholder="14618" aria-describedby="zip-result" required>
+        <button type="submit" class="btn btn--primary">Check my ZIP</button>
+      </div>
+    </form>
+    <div id="zip-result" class="checker__result" role="status" aria-live="polite" hidden></div>
+  </section>
+
+  <section class="card card--map">
+    <div id="map" aria-label="Map of Park View Farm delivery zones"></div>
+    <p class="fineprint">$100 minimum &middot; $20 delivery fee &middot; free delivery on orders $200+</p>
+  </section>
+
+  <section class="markets">
+    <div class="card market" data-market="rochester">
+      <h2><span class="swatch swatch--rochester" aria-hidden="true"></span>Rochester</h2>
+      <p class="market__rule">First Saturday of the month <span class="market__note">(second Saturday in July)</span></p>
+      <p class="market__next" id="next-rochester"></p>
+    </div>
+    <div class="card market" data-market="buffalo">
+      <h2><span class="swatch swatch--buffalo" aria-hidden="true"></span>Buffalo <span class="badge">NEW</span></h2>
+      <p class="market__rule">Third Saturday of the month</p>
+      <p class="market__next" id="next-buffalo"></p>
+    </div>
+  </section>
+
+  <section class="card card--elsewhere">
+    <h2>Not on the map?</h2>
+    <p>Routes grow where the orders are. Buffalo started the same way Rochester did:
+    enough people asked. <a href="https://parkviewfamilyfarm.com/email-sign-up-landing-page">Join
+    the email list</a> and you'll hear first when we head your way. And every Sunday
+    we're at the <strong>Brighton Farmers Market</strong>, Brighton High School lot,
+    with the full lineup.</p>
+  </section>
+
+</main>
+
+<footer class="mapfoot">
+  <a class="btn btn--primary" href="https://parkviewfamilyfarm.com/store">Shop the store</a>
+  <a class="btn btn--ghost" href="https://parkviewfamilyfarm.com/order-planner">Plan your monthly order</a>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

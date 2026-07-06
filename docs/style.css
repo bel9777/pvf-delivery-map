@@ -1,0 +1,198 @@
+/* Park View Farm — Where We Deliver
+   Brand tokens from PVF Brand Identity guide + live theme-variables.css:
+   Copse display / Hind body · powder blue #97C1D3 · action orange #E56F31
+   slate #536B7E · nav navy #2C5170 · text #3D3D3D */
+
+:root {
+  --display: "Copse", Georgia, serif;
+  --body: "Hind", -apple-system, "Segoe UI", sans-serif;
+  --powder: #97C1D3;
+  --orange: #E56F31;
+  --slate: #536B7E;
+  --navy: #2C5170;
+  --ink: #3D3D3D;
+  --paper: #FFFFFF;
+  --card-border: #E8E4DC;
+  --rochester: #2C5170;
+  --buffalo: #E56F31;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--body);
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.55;
+}
+
+.masthead {
+  text-align: center;
+  padding: 40px 16px 8px;
+}
+.masthead__farm {
+  font-family: var(--display);
+  font-size: 15px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--slate);
+  text-decoration: none;
+}
+.masthead h1 {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(30px, 5vw, 44px);
+  margin: 6px 0 0;
+  color: var(--ink);
+}
+.masthead__sub {
+  max-width: 620px;
+  margin: 10px auto 0;
+  font-size: 17px;
+}
+
+/* When embedded on GrazeCart, the page supplies its own header/footer */
+.pvf-embedded .masthead__farm { display: none; }
+
+main#delivery-map {
+  max-width: 860px;
+  margin: 24px auto 0;
+  padding: 0 16px;
+  display: grid;
+  gap: 16px;
+}
+
+.card {
+  background: var(--paper);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+/* ZIP checker */
+.card--checker { border-top: 4px solid var(--powder); }
+.checker__label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.checker__row { display: flex; gap: 10px; }
+#zip-input {
+  flex: 0 1 180px;
+  font: 500 20px var(--body);
+  letter-spacing: .06em;
+  padding: 10px 14px;
+  border: 1.5px solid var(--slate);
+  border-radius: 8px;
+  min-width: 0;
+}
+#zip-input:focus { outline: 2px solid var(--powder); outline-offset: 1px; }
+
+.btn {
+  display: inline-block;
+  font: 600 16px var(--body);
+  padding: 11px 22px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+}
+.btn--primary { background: var(--orange); color: #fff; }
+.btn--primary:hover { background: #cf5f24; }
+.btn--ghost {
+  background: transparent;
+  color: var(--navy);
+  border: 1.5px solid var(--navy);
+}
+.btn--ghost:hover { background: var(--navy); color: #fff; }
+
+.checker__result {
+  margin-top: 14px;
+  padding: 14px 16px;
+  border-radius: 8px;
+  font-size: 17px;
+}
+.checker__result--yes { background: #EDF5EA; border: 1px solid #BCD8B2; }
+.checker__result--no { background: #F6F2EA; border: 1px solid #E3D9C5; }
+.checker__result strong { font-size: 18px; }
+.checker__result .btn { margin: 10px 8px 0 0; padding: 9px 18px; font-size: 15px; }
+
+/* Map */
+.card--map { padding: 10px; }
+#map {
+  width: 100%;
+  height: 480px;
+  border-radius: 8px;
+  background: #EFEDE8;
+}
+.fineprint {
+  text-align: center;
+  font-size: 14px;
+  color: var(--slate);
+  margin: 10px 0 4px;
+}
+
+/* Market cards */
+.markets {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.market h2 {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: 24px;
+  margin: 0 0 6px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.swatch {
+  width: 16px; height: 16px;
+  border-radius: 4px;
+  display: inline-block;
+}
+.swatch--rochester { background: var(--rochester); }
+.swatch--buffalo { background: var(--buffalo); }
+.badge {
+  font: 700 11px var(--body);
+  letter-spacing: .08em;
+  background: var(--orange);
+  color: #fff;
+  border-radius: 4px;
+  padding: 3px 7px;
+}
+.market__rule { margin: 0; font-weight: 600; }
+.market__note { font-weight: 400; color: var(--slate); }
+.market__next { margin: 8px 0 0; }
+.market__next strong { color: var(--navy); }
+
+.card--elsewhere h2 {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: 24px;
+  margin: 0 0 8px;
+}
+.card--elsewhere a { color: var(--navy); }
+
+.mapfoot {
+  text-align: center;
+  padding: 28px 16px 48px;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Leaflet popup typography */
+.leaflet-popup-content { font-family: var(--body); font-size: 15px; }
+.leaflet-popup-content strong { font-family: var(--display); font-weight: 400; font-size: 17px; }
+
+@media (max-width: 640px) {
+  .markets { grid-template-columns: 1fr; }
+  #map { height: 380px; }
+  .checker__row { flex-wrap: wrap; }
+  .checker__row .btn { flex: 1 1 auto; }
+}
