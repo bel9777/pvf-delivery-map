@@ -1,8 +1,22 @@
 # PVF Delivery Map — current state
 
-Updated: 2026-07-06 (evening)
+Updated: 2026-08-09
 
 ## Status: SHIPPED — live on parkviewfamilyfarm.com
+
+## 2026-08-09: Buffalo zone grew to 43 ZIPs (14004 Alden)
+
+- Added 14004 (Alden) after an inbound request from 1308 Townline Rd —
+  first house south of Walden Ave, physically on the Lancaster 14086 line.
+  Brian approved overriding the 2026-07-02 demographic skip for zone
+  service; the skip STILL APPLIES to Meta ad targeting (see the shared
+  brain Buffalo_Delivery_ZIPs.txt border-add note).
+- Changed in the same session: GrazeCart zone 8 (verified server-side via
+  /api/delivery-zones/8/postal-codes AND the live storefront delivery
+  preference lookup, which now offers Home Delivery for 14004), this
+  repo's builder + regenerated zones.geojson/zips.json (live on Pages,
+  verified), shared-brain canonical ZIP file.
+- Buffalo is now 43 ZIPs, matching Rochester's 43. No date logic changed.
 
 - Live page: https://parkviewfamilyfarm.com/where-we-deliver (GrazeCart page
   id 8, HTML widget with the two-line embed.js snippet)
@@ -18,7 +32,7 @@ Updated: 2026-07-06 (evening)
 
 - **Live GrazeCart zones compared ZIP-for-ZIP in admin**: Rochester
   Delivery (zone id 7) = exactly the 43 ZIPs here; Buffalo Delivery (zone
-  id 8) = exactly the 42 ZIPs here. Third zone "Home Delivery" (id 3) is
+  id 8) = exactly the 42 ZIPs here (43 since 2026-08-09, see above). Third zone "Home Delivery" (id 3) is
   the Bulk Meat Pre-Order zone (separate product line, no ZIP refinement)
   — intentionally NOT on this map.
 - Embed verified on the live site: Leaflet initialized, tiles rendered,
