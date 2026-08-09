@@ -52,10 +52,12 @@ BUFFALO_ZIPS = [
     "14227", "14228",
     # Targeted outer ring (2026-07-02)
     "14031", "14032", "14052", "14059", "14085", "14169", "14170",
+    # Border add (2026-08-09): Alden, first inbound customer request
+    "14004",
 ]
 
 assert len(ROCHESTER_ZIPS) == 43, len(ROCHESTER_ZIPS)
-assert len(BUFFALO_ZIPS) == 42, len(BUFFALO_ZIPS)
+assert len(BUFFALO_ZIPS) == 43, len(BUFFALO_ZIPS)
 
 
 def perpendicular_dist(pt, a, b):
