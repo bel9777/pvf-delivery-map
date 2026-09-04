@@ -175,7 +175,6 @@ main#delivery-map {
   padding: 3px 7px;
 }
 .market__rule { margin: 0; font-weight: 600; }
-.market__note { font-weight: 400; color: var(--slate); }
 .market__next { margin: 8px 0 0; }
 .market__next strong { color: var(--navy); }
 

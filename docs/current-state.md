@@ -4,6 +4,14 @@ Updated: 2026-09-04
 
 ## Status: SHIPPED — live on parkviewfamilyfarm.com
 
+## 2026-09-04: Brittle recurring-schedule qualifier removed
+
+- Replaced "First Saturday of the month (second Saturday in July)" and the
+  parallel Buffalo recurring rule with "Monthly home delivery." The exact
+  dynamic next-delivery and cutoff dates remain immediately below each label.
+- This avoids turning one schedule exception into a permanent customer-facing
+  promise. No route-date calculation, zone, fee, or checkout setting changed.
+
 ## 2026-09-04: CARTO API-key watermark removed
 
 - CARTO began watermarking unauthenticated raster tiles with "API KEY
