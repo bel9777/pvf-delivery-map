@@ -16,6 +16,9 @@ Updated: 2026-09-04
   checker stay usable, with a short status notice on the map.
 - Versioned the app URL in both standalone and embedded loaders so browsers do
   not keep serving the old CARTO code after deployment.
+- Active Codex heartbeat `pvf-delivery-map-watchdog` checks the real embedded
+  page every day at 7:00 a.m. Eastern. It stays quiet when healthy and alerts
+  only for a visible map, tile, zone, pin, ZIP-checker, or backing-page failure.
 
 ## 2026-08-09: Buffalo zone grew to 43 ZIPs (14004 Alden)
 
@@ -79,6 +82,3 @@ Updated: 2026-09-04
 - The Buffalo demographic rationale stays in the shared brain, never here.
 - Initial map bounds include a lot of Lake Ontario; acceptable, revisit if
   Brian wants tighter framing.
-- No health-check workflow yet (unlike the order planner). The page is
-  static with no scraper, so the failure surface is small; add one if the
-  embed ever breaks silently.
