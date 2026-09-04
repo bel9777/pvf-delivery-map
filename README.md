@@ -23,6 +23,6 @@ the next delivery date and order deadline for their route.
 
 ## Credits
 
-Basemap © [OpenStreetMap](https://www.openstreetmap.org/copyright) contributors,
-© [CARTO](https://carto.com/attributions). ZIP boundaries: US Census ZCTAs via
+Basemap © [OpenStreetMap](https://www.openstreetmap.org/copyright) contributors.
+ZIP boundaries: US Census ZCTAs via
 [OpenDataDE](https://github.com/OpenDataDE/State-zip-code-GeoJSON).

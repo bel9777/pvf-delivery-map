@@ -33,8 +33,8 @@ buyers, especially for the new Buffalo route (first delivery Jul 18, 2026).
   "pasture-raised" always paired with "corn-and-soy-free", specifics over
   slogans, no AI tells). Brand tokens in `style.css` come from the live
   theme-variables.css + PVF Brand Identity guide.
-- Map tiles: CARTO light basemap (free tier); boundaries: Census-derived
-  ZCTAs via OpenDataDE. Attribution stays on the map.
+- Map tiles: OpenStreetMap standard raster basemap (no API key); boundaries:
+  Census-derived ZCTAs via OpenDataDE. Attribution stays on the map.
 - Publishing changes to the live site = pushing to main. That is
   customer-facing; confirm with Brian before pushing copy or logic changes.
 

@@ -25,6 +25,7 @@
   var STORE_URL = "https://parkviewfamilyfarm.com/store";
   var PLANNER_URL = "https://parkviewfamilyfarm.com/order-planner";
   var SIGNUP_URL = "https://parkviewfamilyfarm.com/email-sign-up-landing-page";
+  var TILE_URL = "https://tile.openstreetmap.org/{z}/{x}/{y}.png";
 
   /* ---------- delivery dates ---------- */
 
@@ -107,10 +108,7 @@
 
   function buildMap(zones) {
     map = L.map("map", { scrollWheelZoom: false });
-    L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
-      maxZoom: 18
-    }).addTo(map);
+    addBasemap(map);
 
     var all = L.featureGroup();
     Object.keys(MARKETS).forEach(function (market) {
@@ -142,6 +140,33 @@
 
     all.addLayer(L.marker(FARM));
     map.fitBounds(all.getBounds().pad(0.06));
+  }
+
+  function addBasemap(targetMap) {
+    var tileErrors = 0;
+    var tiles = L.tileLayer(TILE_URL, {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      maxZoom: 19
+    });
+
+    // Keep the zone overlay and ZIP checker usable during a tile-service outage.
+    // A few isolated missing tiles are harmless; remove the layer only when the
+    // initial view is clearly failing rather than leaving a grid of broken images.
+    tiles.on("tileerror", function () {
+      tileErrors += 1;
+      if (tileErrors < 3 || !targetMap.hasLayer(tiles)) return;
+      targetMap.removeLayer(tiles);
+
+      var notice = L.control({ position: "bottomleft" });
+      notice.onAdd = function () {
+        var el = L.DomUtil.create("div", "map-status");
+        el.textContent = "Street map temporarily unavailable. Delivery zones and ZIP checker are still working.";
+        return el;
+      };
+      notice.addTo(targetMap);
+    });
+
+    tiles.addTo(targetMap);
   }
 
   function pinSvg(color) {

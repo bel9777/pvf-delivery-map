@@ -127,6 +127,16 @@ main#delivery-map {
   border-radius: 8px;
   background: #EFEDE8;
 }
+.map-status {
+  max-width: 300px;
+  padding: 7px 10px;
+  border: 1px solid var(--card-border);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, .94);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, .18);
+  color: var(--ink);
+  font: 600 13px/1.3 var(--body);
+}
 .fineprint {
   text-align: center;
   font-size: 14px;

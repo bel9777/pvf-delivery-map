@@ -42,7 +42,7 @@
     if (foot) mount.appendChild(foot);
 
     const script = document.createElement("script");
-    script.src = BASE + "app.js";
+    script.src = BASE + "app.js?v=20260904-basemap";
     document.body.appendChild(script);
   } catch (e) {
     mount.innerHTML = `<p style="text-align:center;padding:24px;">

@@ -1,8 +1,21 @@
 # PVF Delivery Map — current state
 
-Updated: 2026-08-09
+Updated: 2026-09-04
 
 ## Status: SHIPPED — live on parkviewfamilyfarm.com
+
+## 2026-09-04: CARTO API-key watermark removed
+
+- CARTO began watermarking unauthenticated raster tiles with "API KEY
+  REQUIRED," even though the same public tile URL had worked since launch.
+- Replaced the CARTO layer with OpenStreetMap's standard keyless raster tiles,
+  retained visible OpenStreetMap attribution, and isolated the provider URL in
+  one constant for future maintenance.
+- Added a tile-error fallback: if the basemap service is clearly unavailable,
+  broken tiles are removed while the delivery-zone polygons, pins, and ZIP
+  checker stay usable, with a short status notice on the map.
+- Versioned the app URL in both standalone and embedded loaders so browsers do
+  not keep serving the old CARTO code after deployment.
 
 ## 2026-08-09: Buffalo zone grew to 43 ZIPs (14004 Alden)
 
