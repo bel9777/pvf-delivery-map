@@ -29,6 +29,11 @@
 
   /* ---------- delivery dates ---------- */
 
+  // One-off exceptions: "market:YYYY-M" (month 1-12) → nth Saturday.
+  var DATE_EXCEPTIONS = {
+    "buffalo:2026-11": 2 // Nov 14, 2026: moved up a week for Thanksgiving turkeys (Brian 2026-09-29)
+  };
+
   function nthSaturday(year, month, n) {
     var first = new Date(year, month, 1);
     var offset = (6 - first.getDay() + 7) % 7;
@@ -41,7 +46,8 @@
     for (var i = 0; i < 14; i++) {
       var probe = new Date(now.getFullYear(), now.getMonth() + i, 1);
       var y = probe.getFullYear(), m = probe.getMonth();
-      var n = market === "buffalo" ? 3 : (m === 6 ? 2 : 1); // July shift, Rochester only
+      var n = DATE_EXCEPTIONS[market + ":" + y + "-" + (m + 1)] ||
+        (market === "buffalo" ? 3 : (m === 6 ? 2 : 1)); // July shift, Rochester only
       var delivery = nthSaturday(y, m, n);
       var deadline = new Date(y, m, delivery.getDate() - 2, 23, 59, 59);
       if (deadline > now) return { delivery: delivery, deadline: deadline };
