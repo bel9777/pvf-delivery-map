@@ -31,7 +31,8 @@
 
   // One-off exceptions: "market:YYYY-M" (month 1-12) → nth Saturday.
   var DATE_EXCEPTIONS = {
-    "buffalo:2026-11": 2 // Nov 14, 2026: moved up a week for Thanksgiving turkeys (Brian 2026-09-29)
+    "buffalo:2026-11": 2, // Nov 14, 2026: moved up a week for Thanksgiving turkeys (Brian 2026-09-29)
+    "rochester:2027-1": 2 // Jan 9, 2027: skips New Year weekend, order by Thu Jan 7 (Brian 2026-11-10)
   };
 
   function nthSaturday(year, month, n) {

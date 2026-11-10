@@ -1,8 +1,19 @@
 # PVF Delivery Map — current state
 
-Updated: 2026-09-04
+Updated: 2026-11-10
 
 ## Status: SHIPPED — live on parkviewfamilyfarm.com
+
+## 2026-11-10: Rochester January 2027 is Sat Jan 9
+
+- `DATE_EXCEPTIONS` in `docs/app.js` gained `"rochester:2027-1": 2` (order by Thu
+  Jan 7). Brian chose Jan 9 over Jan 2, which falls on New Year weekend.
+- The same change went into the order planner. GrazeCart schedule 15 now has
+  Jan 9, Feb 6 and Mar 6, 2027.
+- Checked with Node: the rule returns Dec 5, Jan 9, Feb 6, Mar 6 for Rochester
+  and Nov 14, Dec 19, Jan 16, Feb 20 for Buffalo, matching the store.
+- The map still computes dates by rule and does not read GrazeCart. Any future
+  one-off date needs an exception here and in the order planner.
 
 ## 2026-09-04: Brittle recurring-schedule qualifier removed
 
